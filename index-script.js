@@ -8,10 +8,23 @@ let sidebar_btn = sidebar.querySelectorAll("a");
 let page = document.getElementById("page");
 let page_txt = page.querySelector("h1");
 let isMenu = false;
+let isNotFound = Boolean;
+
+if (isNotFound) {
+    try {
+        const path = window.location.pathname;
+        if (path === routes[path]) {
+            window.location.path = "/TestWeb";
+        }
+    } catch (error) {
+        console.error();
+        
+    }
+}
 
 const routes = {
-    "/": "NULL",
-    "/bio": "This is a bio<br> yes, its a bio<br> yes, it is a bio."
+    "/TestWeb": "NULL",
+    "/TestWeb/bio": "This is a bio<br> yes, its a bio<br> yes, it is a bio."
 }
 
 ayam.addEventListener("click", (e)=>{
@@ -68,8 +81,10 @@ function pagech(path) {
 
 function updateContent() {
     const path = window.location.pathname;
+    console.log(path);
+    
     // const appDiv = document.getElementById("app");
-    page_txt.innerHTML = routes["/TestWeb" + path] || "<h1>404 Not Found</h1><p>The page you are looking for does not exist.</p>";
+    page_txt.innerHTML = routes[path] || "<h1>404 Not Found</h1><p>The page you are looking for does not exist.</p>";
 }
 
 function href(param) {
