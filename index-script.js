@@ -62,7 +62,7 @@ function pagech(path) {
     // );
     // loadPage("/profile");
     
-    window.history.pushState({}, path, window.location.origin + path);
+    window.history.pushState({}, path, window.location.origin + "/TestWeb" + path);
     updateContent();
 }
 
