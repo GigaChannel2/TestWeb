@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+    <div id="main-header">
+        <!-- <div id="shadow"></div> -->
+         <a class="side left" id="logo" href="http://deltarune.com">
+            <img src="img/deltarune-logo.png" alt="deltarune-logo">
+        </a>
+        <ul>
+            <li>
+                <a class="href" href="https://gigachannel2.github.io/Definitely-Not-A-Website">Password</a>
+            </li>
+            <li> Bio </li>
+            <li>Social</li>
+            <li>
+                <!-- <button>Ayam</button> -->
+                 <a class="href" id="ayam">Ayam</a>
+            </li>
+        </ul>
+        <button class="side right" id="menu" title="Open menu" onclick="menu()">
+            <img src="img/menu.png" alt="">
+        </button>
+    </div>
+    <div id="content">
+        <div class="box-shadow" id="sidebar">
+            <a href="/bio" onclick="pagech('/bio')" class="href">Bio</a>
+            <a href="/page2" onclick="pagech('/page2')" class="href">Page 2</a>
+            <a href="/page3" onclick="pagech('/page3')" class="href">Page 3</a>
+            <a href="/page4" onclick="pagech('/page4')" class="href">Page 4</a>
+        </div>
+        <div class="box-shadow" id="page">
+            <h1>NULL</h1>
+        </div>
+    </div>
+    <script src="index-script.js"></script>
+</body>
+</html>
