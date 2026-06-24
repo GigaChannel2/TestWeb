@@ -8,6 +8,7 @@ let sidebar_btn = sidebar.querySelectorAll("a");
 let page = document.getElementById("page");
 let page_txt = page.querySelector("h1");
 let sidemenu = document.getElementById("sidemenu");
+let sidemenu_btn = sidemenu.querySelectorAll("a");
 let backmenu = document.getElementById("backmenu");
 let backshadow = document.getElementById("backshadow");
 let isMenu = false;
@@ -33,6 +34,12 @@ const routes = {
 ayam.addEventListener("click", (e)=>{
     e.preventDefault();
     new Audio("sfx/ayam.mp3").play();
+});
+
+sidemenu_btn.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+    })
 });
 
 sidebar_btn.forEach(btn => {

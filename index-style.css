@@ -221,6 +221,26 @@ body {
     height: fit-content;
 }
 
+#sidemenu ul {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    list-style: none;
+    cursor: pointer;
+    align-self: center;
+    justify-self: flex-start;
+    font-size: 20px;
+    gap: 10px;
+    padding: 0;
+}
+
+#sidemenu ul li {
+    background: rgb(0, 0, 0);
+    border: 3px solid rgb(255, 255, 255);
+    /* border-radius: 5px; */
+    padding: 15px;
+}
+
 #backshadow {
     position: fixed;
     width: 100vw;
