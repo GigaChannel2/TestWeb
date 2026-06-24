@@ -23,10 +23,16 @@
                  <a class="href" id="ayam">Ayam</a>
             </li>
         </ul>
-        <button class="side right" id="menu" title="Open menu" onclick="menu()">
+        <button class="side right" id="menu" title="Open menu" onclick="open_menu()">
             <img src="img/menu.png" alt="">
         </button>
     </div>
+    <section id="sidemenu_sect">
+        <div id="backshadow"></div>
+        <nav id="sidemenu">
+            <button id="backmenu" onclick="close_menu()"><a>Back</a></button>
+        </nav>
+    </section>
     <div id="content">
         <div class="box-shadow" id="sidebar">
             <a href="/bio" onclick="pagech('/bio')" class="href">Bio</a>

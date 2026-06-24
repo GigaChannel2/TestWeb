@@ -191,6 +191,44 @@ body {
     max-width: 400px;
 }
 
+#sidemenu {
+    background: #202020;
+    width: 350px;
+    height: 100vh;
+    display: flex;
+    z-index: 21;
+    position: fixed;
+    justify-self: left;
+    /* right: 900px; */
+    left: -400px;
+    transition: left 0.5s ease;
+    padding: 15px;
+}
+
+#sidemenu #backmenu {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    font-family: "8bit";
+    cursor: pointer;
+    justify-self: flex-start;
+    height: fit-content;
+}
+
+#backshadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 20;
+    /* opacity: 0.4; */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
 #copyright {
     /* align-self: flex-end; */
     justify-self: end;

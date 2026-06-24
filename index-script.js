@@ -7,6 +7,9 @@ let sidebar = document.getElementById("sidebar");
 let sidebar_btn = sidebar.querySelectorAll("a");
 let page = document.getElementById("page");
 let page_txt = page.querySelector("h1");
+let sidemenu = document.getElementById("sidemenu");
+let backmenu = document.getElementById("backmenu");
+let backshadow = document.getElementById("backshadow");
 let isMenu = false;
 let isNotFound = Boolean;
 
@@ -59,11 +62,23 @@ if (debug) {
     }, 600)
 }
 
-function menu() {
+function open_menu() {
+    if (!isMenu) {
+        isMenu = true;
+        backshadow.style.visibility = "visible";
+        sidemenu.style.left = 0;
+        backshadow.style.opacity = 0.4;
+    }
+}
+
+function close_menu() {
     if (isMenu) {
         isMenu = false;
-    } else {
-        isMenu = true;
+        sidemenu.style.left = "-400px";
+        backshadow.style.opacity = 0;
+        setTimeout(()=>{
+            backshadow.style.visibility = "hidden";
+        }, 500)
     }
 }
 
