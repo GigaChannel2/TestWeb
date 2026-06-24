@@ -46,6 +46,9 @@ sidemenu_btn.forEach(btn => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
     })
+    // btn.addEventListener("mouseenter", (e) => {
+
+    // })
 });
 
 sidebar_btn.forEach(btn => {
