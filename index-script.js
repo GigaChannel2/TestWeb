@@ -2,7 +2,8 @@ const debug = true;
 
 let header = document.getElementById("main-header");
 let header_logo = document.getElementById("logo");
-let ayam = document.getElementById("ayam")
+let ayam = document.getElementById("ayam");
+let ayam2 = document.getElementById("ayam2");
 let sidebar = document.getElementById("sidebar");
 let sidebar_btn = sidebar.querySelectorAll("a");
 let page = document.getElementById("page");
@@ -32,6 +33,11 @@ const routes = {
 }
 
 ayam.addEventListener("click", (e)=>{
+    e.preventDefault();
+    new Audio("sfx/ayam.mp3").play();
+});
+
+ayam2.addEventListener("click", (e)=>{
     e.preventDefault();
     new Audio("sfx/ayam.mp3").play();
 });
