@@ -191,6 +191,10 @@ body {
     max-width: 400px;
 }
 
+#footer p a {
+    color: #727272;
+}
+
 #sidemenu {
     background: #202020;
     width: 350px;
