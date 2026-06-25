@@ -40,7 +40,7 @@ async function loadContent() {
         }
 
         container.innerHTML += `
-            <a class="href post" href="/post?p=${slug}">
+            <a class="href post" href="post?p=${slug}">
                 <article class="card">
 
                     <img src="img/thumbnails/${post.thumbnail}">
