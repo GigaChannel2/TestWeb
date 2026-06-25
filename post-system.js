@@ -2,6 +2,7 @@
 const converter = new showdown.Converter();
 
 let titlehtml = document.getElementById("title");
+let doctitle = document.querySelector("title");
 let datehtml = document.getElementById("date");
 let thumbnailimg = document.getElementById("image");
 let post = document.getElementById("content");
@@ -43,6 +44,7 @@ async function mdConvert() {
         thumbnailimg.innerHTML = `<img src="img/thumbnails/${thumbnail}">`;
     }
     titlehtml.textContent = title;
+    doctitle.textContent = title
     datehtml.textContent = date;
     post.innerHTML = converter.makeHtml(md);
 
