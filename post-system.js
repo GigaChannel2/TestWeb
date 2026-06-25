@@ -1,26 +1,49 @@
-const page = document.getElementById("page");
+
 const converter = new showdown.Converter();
 
-let post = document.getElementById("post");
+let titlehtml = document.getElementById("title");
+let datehtml = document.getElementById("date");
+let thumbnailimg = document.getElementById("image");
+let post = document.getElementById("content");
 
 const slug = new URL(location)
 .searchParams
 .get("p");
 
-if(slug){
-    mdConvert();
-}
+// if(slug){
+mdConvert();
+// }
+
 
 async function mdConvert() {
 
-    let res = await fetch(`posts/${slug}.md`);
+    let metafet = await fetch("posts/posts.json");
+    let data = await metafet.json();
+    
+    let meta = data[slug];
+
+    if (!meta) {
+        meta = data["404"];
+        console.log(meta);
+    }
+    
+    let title = meta.title;
+    let date = meta.date;
+    let thumbnail = meta.thumbnail;
+    
+    let res = await fetch(`posts/${meta.content}`);
 
     if (!res.ok) {
         res = await fetch("posts/notfound.md");
     }
-
+    
     const md = await res.text();
 
+    if (thumbnail) {
+        thumbnailimg.innerHTML = `<img src="img/thumbnails/${thumbnail}">`;
+    }
+    titlehtml.textContent = title;
+    datehtml.textContent = date;
     post.innerHTML = converter.makeHtml(md);
 
 }

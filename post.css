@@ -12,14 +12,14 @@
     padding: 20px;
     /* padding-top: 125px; */
     width: 600px;
-    height: 600px;
+    height: max-content;
     background: rgb(26, 26, 26);
     align-self: center;
     font-weight: normal;
     font-family: "varela round";
     padding-right: 50px;
-
     max-width: 950px;
+    max-height: max-content;
     width: 700px;
 }
 
@@ -33,12 +33,33 @@
     font-weight: normal;
 }
 
+#date {
+    font-size: 10px;
+}
+
 #post p{
     padding-left: 10px;
     top: 14px;
     position: relative;
     font-size: 14px;
     height: fit-content;
+}
+
+#post #title {
+    padding-top: 34px;
+    position: relative;
+}
+
+#post #image img {
+    pointer-events: none;
+    max-width: 100%;
+    width: 80%;
+}
+
+#content {
+    position: relative;
+    top: 14px;
+    padding-bottom: 50px;
 }
 
 #post img {
@@ -50,7 +71,7 @@
     #post {
         max-width: fit-content;
         padding: 35px;
-        padding-right: 75px;
-        width: 90%;
+        padding-right: 20vw;
+        width: 100%;
     }
 }
