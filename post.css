@@ -7,9 +7,29 @@
 
 #post {
     padding: 20px;
-    padding-top: 125px;
+    /* padding-top: 125px; */
     width: 600px;
     height: 600px;
     background: rgb(26, 26, 26);
     align-self: center;
+    font-weight: normal;
+    font-family: "varela round";
+}
+
+#post h1{
+    margin: 0;
+    font-weight: bold;
+}
+
+#post h2{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#post p{
+    padding-left: 10px;
+    top: 14px;
+    position: relative;
+    font-size: 14px;
+    height: fit-content;
 }
