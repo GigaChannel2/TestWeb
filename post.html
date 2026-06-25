@@ -11,16 +11,88 @@
 </head>
 <body>
 
-    <nav id="basic_ui"></nav>
+    <nav id="basic_ui">
+        <div id="main-header">
+        <!-- <div id="shadow"></div> -->
+         <a class="side left" id="logo" href="http://deltarune.com">
+            <img src="img/deltarune-logo.png" alt="deltarune-logo">
+        </a>
+        <ul>
+            <li>
+                <a class="href" href="https://gigachannel2.github.io/Definitely-Not-A-Website">Password</a>
+            </li>
+            <li> <a>Bio</a> </li>
+            <li> <a>Social</a> </li>
+            <li>
+                <!-- <button>Ayam</button> -->
+                 <a class="href" id="ayam">Ayam</a>
+            </li>
+        </ul>
+        <button class="side right" id="menu" title="Open menu" onclick="open_menu()">
+            <img src="img/menu.png" alt="">
+        </button>
+        </div>
+        <section id="sidemenu_sect">
+        <div id="backshadow"></div>
+        <nav id="sidemenu">
+            <section id="backsectmenu">
+                <button id="backmenu" onclick="close_menu()"><a>X</a></button>
+            </section>
+            
+            <section id="sidemenubuttons">
+                <ul>
+                    <li>
+                        <h1 onclick="href('https://gigachannel2.github.io/Definitely-Not-A-Website')">
+                            <a class="href">Password</a>
+                        </h1>
+                    </li>
+                    <li> 
+                        <h1>
+                            <a>Bio</a>
+                        </h1>
+                    </li>
+                    <li>
+                        <h1>
+                            <a>Social</a>
+                        </h1>
+                    </li>
+                    <li>
+                        <h1 id="ayam2">
+                            <a class="href" >Ayam</a>
+                        </h1>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+        </section>
+    </nav>
 
     <div id="container">
         <div class="box-shadow" id="post"></div>
     </div>
     
     <footer id="footer">
+        <p style="margin-bottom: 100px;">
+            Lebih keren dari pada <a href="http://masmisran.com" class="href">masmisran.com</a>
+        </p>
+        <p>
+            <a href="https://deltarune.com" class="href">DELTARUNE</a> © Toby Fox 2018-2026. All rights reserved.
+        </p>
+        <p>
+            <a href="https://store.steampowered.com" class="href">Steam</a> and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.
+        </p>
+        <p>
+            "<a href="https://www.playstation.com" class="href">PlayStation</a>" and the "PS" Family logo are registered trademarks and "PS4" and "PS5" is a trademark of Sony Interactive Entertainment LLC.
+        </p>
+        <p>
+            <a href="http://www.nintendo.com" class="href">Nintendo</a> Switch™ is a trademark of Nintendo.
+        </p>
+        <p id="copyright">
+            @Copyright 2026
+        </p>
     </footer>
     
-    <script src="import_ui.js"></script>
+    <!-- <script src="import_ui.js"></script> -->
     <script src="header-sidemenu.js"></script>
     <script src="post-system.js"></script>
 </body>
