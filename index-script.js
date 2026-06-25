@@ -21,7 +21,7 @@ async function loadContent() {
         .split(/\n\s*\n/)
         .slice(0, 2)
         .join("\n\n");
-        
+
     for (const slug in data) {
 
         // Skip 404
@@ -40,7 +40,7 @@ async function loadContent() {
         }
 
         container.innerHTML += `
-            <a class="href" href="/post?p=${slug}">
+            <a class="href post" href="/post?p=${slug}">
                 <article class="card">
 
                     <img src="img/thumbnails/${post.thumbnail}">
