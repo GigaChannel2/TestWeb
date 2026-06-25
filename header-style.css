@@ -120,6 +120,7 @@ body {
 
 #main-header #menu img {
     height: 100%;
+    pointer-events: none;
 }
 
 .href {
