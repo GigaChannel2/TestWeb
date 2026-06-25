@@ -2,5 +2,6 @@
 
 ## Bikin blog, lebih keren dari masmisran.com
 
-ya, gitu  
-sakmadik misran kontol
+HAHA, AKU BSIA BIKIN BLOG SENDIRI  
+GAPERLU GW WORDPRESS MAMPUS  
+DESAIN SENDIRI BROKKK

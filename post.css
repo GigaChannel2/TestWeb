@@ -2,7 +2,10 @@
     display: flex;
     justify-content: center;
     top: 125px;
+    /* right: 150px; */
     position: relative;
+    /* width: fit-content; */
+    /* left: 50px; */
 }
 
 #post {
@@ -14,6 +17,10 @@
     align-self: center;
     font-weight: normal;
     font-family: "varela round";
+    padding-right: 50px;
+
+    max-width: 950px;
+    width: 700px;
 }
 
 #post h1{
@@ -32,4 +39,18 @@
     position: relative;
     font-size: 14px;
     height: fit-content;
+}
+
+#post img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+ 
+@media (max-width: 900px) {
+    #post {
+        max-width: fit-content;
+        padding: 35px;
+        padding-right: 75px;
+        width: 90%;
+    }
 }
