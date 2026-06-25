@@ -2,67 +2,120 @@ const debug = true;
 
 let page = document.getElementById("page");
 let page_txt = page.querySelector("h1");
-let sidebar = document.getElementById("sidebar");
-let sidebar_btn = sidebar.querySelectorAll("a");
+// let sidebar = document.getElementById("sidebar");
+// let sidebar_btn = sidebar.querySelectorAll("a");
 
 let isNotFound = Boolean;
 
-if (isNotFound) {
-    try {
-        const path = window.location.pathname;
-        if (path === routes[path]) {
-            window.location.path = "/TestWeb";
+const container = document.getElementById("page");
+
+async function loadContent() {
+    const res = await fetch("posts/posts.json");
+    const data = await res.json();
+
+    const md = await fetch(`posts/${data.content}`)
+    .then(r => r.text());
+
+    const preview = md
+        .trim()
+        .split(/\n\s*\n/)
+        .slice(0, 2)
+        .join("\n\n");
+        
+    for (const slug in data) {
+
+        // Skip 404
+        if (slug === "404") continue;
+        if (slug === "test123markdownortemplate") continue;
+
+        const post = data[slug];
+
+        if (!post) {
+            container.innerHTML = `
+                <h1 id="empty" style="align-self: center;">
+                    It's empty right now...<br>
+                    wait for new post from me!
+                </h1>
+            `;
         }
-    } catch (error) {
-        console.error();
-        
+
+        container.innerHTML += `
+            <a class="href" href="/post?p=${slug}">
+                <article class="card">
+
+                    <img src="img/thumbnails/${post.thumbnail}">
+
+                    <h2>${post.title}</h2>
+
+                    <small>${post.date}</small>
+
+                    <p>${slug}</p>
+
+                </article>
+            </a>
+        `;
     }
+    
 }
-
-const routes = {
-    "/TestWeb": "NULL",
-    "/TestWeb/bio": "This is a bio<br> yes, its a bio<br> yes, it is a bio."
-}
+loadContent();
 
 
-// Handle browser navigation (back/forward buttons)
-window.onpopstate = updateContent;
-
-// Load the correct content when the page loads
-window.onload = updateContent;
-
-function loadPage(url) {
-    // fetch konten atau ganti isi halaman
-    console.log("Loading", url);
-}
-
-if (debug) {
-    setInterval(()=>{
-        console.log(isMenu);
+// if (isNotFound) {
+//     try {
+//         const path = window.location.pathname;
+//         if (path === routes[path]) {
+//             window.location.path = "/TestWeb";
+//         }
+//     } catch (error) {
+//         console.error();
         
-    }, 600)
-}
+//     }
+// }
 
-function pagech(path) {
-    // history.pushState(
-    //     {},
-    //     "",
-    //     "/page" + sect
-    // );
-    // loadPage("/profile");
+// const routes = {
+//     "/TestWeb": "NULL",
+//     "/TestWeb/bio": "This is a bio<br> yes, its a bio<br> yes, it is a bio."
+// }
+
+
+// // // Handle browser navigation (back/forward buttons)
+// // window.onpopstate = updateContent;
+
+// // // Load the correct content when the page loads
+// // window.onload = updateContent;
+
+// function loadPage(url) {
+//     // fetch konten atau ganti isi halaman
+//     console.log("Loading", url);
+// }
+
+// if (debug) {
+//     setInterval(()=>{
+//         console.log(isMenu);
+        
+//     }, 600)
+// }
+
+// function pagech(path) {
+//     // history.pushState(
+//     //     {},
+//     //     "",
+//     //     "/page" + sect
+//     // );
+//     // loadPage("/profile");
     
-    window.history.pushState({}, path, window.location.origin + "/TestWeb" + path);
-    updateContent();
-}
+//     window.history.pushState({}, path, window.location.origin + "/TestWeb" + path);
+//     updateContent();
+// }
 
-function updateContent() {
-    const path = window.location.pathname;
-    console.log(path);
+// function updateContent() {
+//     const path = window.location.pathname;
+//     console.log(path);
     
-    // const appDiv = document.getElementById("app");
-    page_txt.innerHTML = routes[path] || "<h1>404 Not Found</h1><p>The page you are looking for does not exist.</p>";
-}
+//     // const appDiv = document.getElementById("app");
+//     page_txt.innerHTML = routes[path] || "<h1>404 Not Found</h1><p>The page you are looking for does not exist.</p>";
+// }
 
-function href(param) {
-    window.location.href = param;
-}
+// function href(param) {
+//     window.location.href = param;
+// }
