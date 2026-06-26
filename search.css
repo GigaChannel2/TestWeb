@@ -106,6 +106,6 @@ body {
 
 @media (max-width: 900px) {
     #container {
-        max-width: 90vw;
+        max-width: 90%;
     }
 }
