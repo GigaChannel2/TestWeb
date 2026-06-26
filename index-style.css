@@ -66,6 +66,18 @@
     width: fit-content;
 }
 
+.card:first-child {
+    width: 60%;
+}
+
+.card a {
+    width: fit-content;
+}
+
+.href:hover {
+    text-decoration: underline;
+}
+
 .card img {
     width: 60%;
     max-width: 100%;

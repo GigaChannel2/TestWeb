@@ -11,16 +11,15 @@
 #post {
     padding: 20px;
     /* padding-top: 125px; */
-    width: 600px;
-    height: max-content;
+    width: 700px;
+    height: 900px;
+    max-width: 950px;
+    max-height: 900px;
     background: rgb(26, 26, 26);
     align-self: center;
     font-weight: normal;
     font-family: "varela round";
     padding-right: 50px;
-    max-width: 950px;
-    max-height: max-content;
-    width: 700px;
 }
 
 #post h1{
