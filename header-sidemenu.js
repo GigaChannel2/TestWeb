@@ -69,3 +69,7 @@
 
 
 // });
+
+function href(param) {
+    window.location.href = param;
+}

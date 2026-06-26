@@ -117,7 +117,3 @@ loadContent();
 //     // const appDiv = document.getElementById("app");
 //     page_txt.innerHTML = routes[path] || "<h1>404 Not Found</h1><p>The page you are looking for does not exist.</p>";
 // }
-
-// function href(param) {
-//     window.location.href = param;
-// }
