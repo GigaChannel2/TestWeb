@@ -54,7 +54,11 @@ async function loadContent() {
 
                     <small>${post.date}</small>
 
-                    <p class="href post" href="post?p=${slug}">${preview}</p>
+                    <p>
+                        <a class="href post" href="post?p=${slug}">
+                            ${preview}
+                        </a>
+                    </p>
 
                 </article>
             `;
@@ -72,7 +76,11 @@ async function loadContent() {
 
                     <small>${post.date}</small>
 
-                    <p class="href post" href="post?p=${slug}">${preview}</p>
+                    <p>
+                        <a class="href post" href="post?p=${slug}">
+                            ${preview}
+                        </a>
+                    </p>
 
                 </article>
             `;
