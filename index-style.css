@@ -51,7 +51,7 @@
 
 .card {
     border-bottom: 2px solid #505050;
-    width: 100%;
+    width: 60%;
     padding-bottom: 20px;
     padding: 15px;
 }
@@ -76,10 +76,11 @@
 
 article .href:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .card img {
-    width: 60%;
+    width: 100%;
     max-width: 100%;
     border-radius: 15px;
 }
@@ -104,5 +105,6 @@ article .href:hover {
     #page {
         justify-self: center;
         right: 0;
+        width: 100%;
     }
 }

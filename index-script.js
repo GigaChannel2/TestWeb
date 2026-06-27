@@ -13,14 +13,7 @@ async function loadContent() {
     const res = await fetch("posts/posts.json");
     const data = await res.json();
 
-    const md = await fetch(`posts/${data.content}`)
-    .then(r => r.text());
 
-    const preview = md
-        .trim()
-        .split(/\n\s*\n/)
-        .slice(0, 2)
-        .join("\n\n");
 
     for (const slug in data) {
 
@@ -28,7 +21,18 @@ async function loadContent() {
         if (slug === "404") continue;
         if (slug === "test123markdownortemplate") continue;
 
+
         const post = data[slug];
+        const md = await fetch(`posts/${post.content}`)
+        .then(r => r.text());
+        const preview = md
+            .trim()
+            .split(/\s+/)
+            .slice(0, 6)
+            .join(" ") + "...";
+            // .trim()
+            // .split(/\n\s*\n/)
+            // .slice(0, 2)
 
         if (!post) {
             container.innerHTML = `
@@ -37,9 +41,25 @@ async function loadContent() {
                     wait for new post from me!
                 </h1>
             `;
+            return;
         }
 
-        container.innerHTML += `
+        if (!post.thumbnail) {
+            container.innerHTML += `
+                <article class="card">
+                
+                    <a class="href post" href="post?p=${slug}">
+                        <h2>${post.title}</h2>
+                    </a>
+
+                    <small>${post.date}</small>
+
+                    <p class="href post" href="post?p=${slug}">${preview}</p>
+
+                </article>
+            `;
+        } else {
+            container.innerHTML += `
                 <article class="card">
 
                     <a class="href post" href="post?p=${slug}">
@@ -52,10 +72,12 @@ async function loadContent() {
 
                     <small>${post.date}</small>
 
-                    <p>${slug}</p>
+                    <p class="href post" href="post?p=${slug}">${preview}</p>
 
                 </article>
-        `;
+            `;
+        }
+        
     }
     
 }
